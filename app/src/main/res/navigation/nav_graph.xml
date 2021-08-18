@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.weathertest.ui.main.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_cityFragment"
+            app:destination="@id/cityFragment"
+            app:enterAnim="@anim/in_anim"
+            app:exitAnim="@anim/out_anim"
+            app:popEnterAnim="@anim/in_anim"
+            app:popExitAnim="@anim/out_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.example.weathertest.ui.city.view.CityFragment"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city" >
+        <argument
+            android:name="lat"
+            app:argType="long" />
+        <argument android:name="lon"
+            app:argType="long" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
